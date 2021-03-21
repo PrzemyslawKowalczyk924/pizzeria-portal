@@ -6,7 +6,7 @@ import styles from './BookingsId.module.scss';
 const BookingsId = () => (
   <div className={styles.component}> 
     <h2>BookingsId View</h2>
-    <Link to={`${process.env.PUBLIC_URL}/waiter`} activeClassName='active'>waiter</Link>
+    <Link to={`${process.env.PUBLIC_URL}/waiter`} activeclassname='active'>waiter</Link>
   </div>
 );
   

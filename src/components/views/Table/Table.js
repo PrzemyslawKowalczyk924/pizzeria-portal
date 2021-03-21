@@ -6,10 +6,10 @@ import styles from './Table.module.scss';
 const Table = () => (
   <div className={styles.component}> 
     <h2>Table View</h2>
-    <Link to={`${process.env.PUBLIC_URL}/table/bookings/:id`} activeClassName='active'>bookings:id</Link>   
-    <Link to={`${process.env.PUBLIC_URL}/table/bookings/:new`} activeClassName='active'>bookings:new</Link>   
-    <Link to={`${process.env.PUBLIC_URL}/table/events/:id`} activeClassName='active'>event:id</Link>   
-    <Link to={`${process.env.PUBLIC_URL}/table/events/:new`} activeClassName='active'>events:new</Link>   
+    <Link to={`${process.env.PUBLIC_URL}/table/bookings/:id`} activeclassname='active'>bookings:id</Link>   
+    <Link to={`${process.env.PUBLIC_URL}/table/bookings/:new`} activeclassname='active'>bookings:new</Link>   
+    <Link to={`${process.env.PUBLIC_URL}/table/events/:id`} activeclassname='active'>event:id</Link>   
+    <Link to={`${process.env.PUBLIC_URL}/table/events/:new`} activeclassname='active'>events:new</Link>   
   </div>
 );
   

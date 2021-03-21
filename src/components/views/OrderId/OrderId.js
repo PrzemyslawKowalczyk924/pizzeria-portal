@@ -6,7 +6,7 @@ import styles from './OrderId.module.scss';
 const OrderId = () => (
   <div className={styles.component}> 
     <h2>OrderId View</h2>   
-    <Link to={`${process.env.PUBLIC_URL}/table`} activeClassName='active'>table</Link>
+    <Link to={`${process.env.PUBLIC_URL}/table`} activeclassname='active'>table</Link>
   </div>
 );
 
