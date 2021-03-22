@@ -1,5 +1,18 @@
 @import '../../../styles/settings.scss';
 
+.root {
+  //flexGrow: 1,
+  flex: 1;
+  //overflow: hidden;
+  //padding: theme.spacing(0, 3);
+}
+
 .component {
   padding: $base-size;
+}
+
+.paper {
+  max-width: 400;
+  margin: 5px;
+  padding: 2px;
 }

@@ -37,13 +37,13 @@ function App() {
               <Route exact path={`${process.env.PUBLIC_URL}/`} component={Dashboard} />
               <Route exact path={`${process.env.PUBLIC_URL + `/login`}`} component={Login} /> 
               <Route exact path={`${process.env.PUBLIC_URL + `/table`}`} component={Table} />
+              <Route exact path={`${process.env.PUBLIC_URL + `/table/bookings/new`}`} component={BookingsNew} />
               <Route exact path={`${process.env.PUBLIC_URL + `/table/bookings/:id`}`} component={BookingsId} />
-              <Route exact path={`${process.env.PUBLIC_URL + `/table/bookings/:new`}`} component={BookingsNew} />
+              <Route exact path={`${process.env.PUBLIC_URL + `/table/events/new`}`} component={EventsNew} />
               <Route exact path={`${process.env.PUBLIC_URL + `/table/events/:id`}`} component={EventsId} />
-              <Route exact path={`${process.env.PUBLIC_URL + `/table/events/:new`}`} component={EventsNew} />
               <Route exact path={`${process.env.PUBLIC_URL + `/waiter`}`} component={Waiter} />
+              <Route exact path={`${process.env.PUBLIC_URL + `/waiter/order/new`}`} component={OrderNew} />
               <Route exact path={`${process.env.PUBLIC_URL + `/waiter/order/:id`}`} component={OrderId} />
-              <Route exact path={`${process.env.PUBLIC_URL + `/waiter/order/:new`}`} component={OrderNew} />
               <Route exact path={`${process.env.PUBLIC_URL + `/kitchen`}`} component={Kitchen} /> 
             </Switch> 
           </MainLayout>
