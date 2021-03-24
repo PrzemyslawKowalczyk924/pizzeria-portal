@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styles from './OrderNew.module.scss';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
-import Button from '@material-ui/core/Button';
+//import Button from '@material-ui/core/Button';
 import { Avatar } from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
 import AirlineSeatLegroomNormalIcon from '@material-ui/icons/AirlineSeatLegroomNormal';
@@ -15,24 +15,13 @@ import FormControl from '@material-ui/core/FormControl';
 import InputLabel from '@material-ui/core/InputLabel';
 import Select from '@material-ui/core/Select';
 import NativeSelect from '@material-ui/core/NativeSelect';
+import MenuItem from '@material-ui/core/MenuItem';
 
-
-/* const demoContent = [
-  {id: '1', status: 'free', order: null},
-  {id: '2', status: 'thinking', order: null},
-  {id: '3', status: 'ordered', order: 123},
-  {id: '4', status: 'prepared', order: 234},
-  {id: '5', status: 'delivered', order: 345},
-  {id: '6', status: 'paid', order: 456},
-]; */
 const NativeSelects = () => {
   const [state, setState] = React.useState({
     age: '',
     name: 'hai',
   });
-
-const message = 'Lorem ipsum';
-const NativeSelects =() => {
   const handleChange = (event) => {
     const name = event.target.name;
     setState({
@@ -42,33 +31,35 @@ const NativeSelects =() => {
   };
 };
 
-const OrderNew = () => (
+const OrderNew = (handleChange, state) => (
   <div className={styles.root}>
     <Paper className={styles.paper}>
       <Grid container spacing={2}>
         <Grid item>
           <Avatar><AirlineSeatLegroomNormalIcon/></Avatar>  
         </Grid>
-        <Grid item xs>
-          <Typography>Table number
-            <FormControl>
-              <InputLabel id='choose-table'>Choose table</InputLabel>
-              <Select
-              native
+        <Grid container item justify="center" alignContent="center" xs={4}>
+          <Typography>Table number</Typography>  
+        </Grid>
+        <Grid container item justify="center" xs={4}>
+          <FormControl className={styles.resizer}>
+            <InputLabel className={styles.tableNumber} id='choose-table'>Number</InputLabel>
+            <NativeSelect
+              className={styles.tableNumber}
               value={state.age}
               onChange={handleChange}
               inputProps={{
                 name: 'age',
-                id: 'age-native-simple',
-              }}>
-                <option aria-label="None" value="" />
-                <option value={10}>Ten</option>
-                <option value={20}>Twenty</option>
-                <option value={30}>Thirty</option>
-              </Select>
-            </FormControl>  
-          </Typography>
-        </Grid>    
+                id: 'age-native-helper',
+              }}
+            >
+              <option aria-label="None" value="" />
+              <option value={10}>1</option>
+              <option value={20}>2</option>
+              <option value={30}>3</option>
+            </NativeSelect>
+          </FormControl>
+        </Grid>  
       </Grid> 
     </Paper>
     <Paper className={styles.paper}>
@@ -76,9 +67,29 @@ const OrderNew = () => (
         <Grid item>
           <Avatar><MenuBookIcon/></Avatar>  
         </Grid>
-        <Grid item xs>
+        <Grid container item justify="center" alignContent="center" xs={4}>
           <Typography>Product Menu</Typography>
-        </Grid>    
+        </Grid>
+        <Grid container item justify="center" xs={4}>
+          <FormControl className={styles.resizer}>
+            <InputLabel className={styles.tableNumber} id='choose-table'>Select</InputLabel>
+            <NativeSelect
+              className={styles.tableNumber}
+              value={state.age}
+              onChange={handleChange}
+              inputProps={{
+                name: 'age',
+                id: 'age-native-helper',
+              }}
+            >
+              <option aria-label="None" value="" />
+              <option value={10}>DOUGHNUT</option>
+              <option value={20}>BREAKFAST</option>
+              <option value={30}>PIZZA</option>
+              <option value={40}>SALAD</option>
+            </NativeSelect>
+          </FormControl>
+        </Grid>      
       </Grid> 
     </Paper>
     <Paper className={styles.paper}>
@@ -87,7 +98,19 @@ const OrderNew = () => (
           <Avatar><ListIcon/></Avatar>  
         </Grid>  
         <Grid item xs>
-          <Typography>Product Options</Typography>
+          <Typography>Product Options
+            <FormControl>
+              <InputLabel id='choose-table'>Chose</InputLabel>
+              <Select
+                labelId='tables'
+                id='table'
+              >
+                <MenuItem value={1}>Table1</MenuItem>
+                <MenuItem value={2}>Table2</MenuItem>
+                <MenuItem value={3}>Table3</MenuItem>
+              </Select>  
+            </FormControl>
+          </Typography>
         </Grid>  
       </Grid> 
     </Paper>
@@ -108,6 +131,9 @@ const OrderNew = () => (
         </Grid>
         <Grid item xs>
           <Typography>Price</Typography>
+        </Grid>
+        <Grid item>
+          <Paper elevation={3}>3,00$</Paper>
         </Grid>    
       </Grid> 
     </Paper>
