@@ -1,15 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styles from './Kitchen.module.scss';
+import Paper from '@material-ui/core/Paper';
 
 const Kitchen = () => (
-  <div className={styles.component}> 
-    <h2>Kitchen View</h2>   
-  </div>
+  <Paper className={styles.component} elevation={9}>
+    <div className={styles.component}> 
+      <h2>Kitchen View</h2>   
+    </div>
+  </Paper>  
 );
   
-Kitchen.propTypes = {
-  children: PropTypes.node,
-};
-
 export default Kitchen;

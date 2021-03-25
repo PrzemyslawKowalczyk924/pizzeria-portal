@@ -92,7 +92,3 @@ const Waiter = () => (
 );
 
 export default Waiter;
-
-/* 
-<Link to={`${process.env.PUBLIC_URL}/waiter/order/:id`} activeclassname='active'>order:id</Link>   
-<Link to={`${process.env.PUBLIC_URL}/waiter/order/:new`} activeclassname='active'>order:new</Link>    */

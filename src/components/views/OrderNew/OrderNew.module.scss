@@ -24,3 +24,48 @@
   max-width: 150px;
   width: 100%;
 }
+
+.root-second {
+  width: 100%;
+}
+
+.heading {
+  font-size: 15px;
+  font-weight: regular;
+}
+
+.formBox {
+  min-width: 170px;
+  margin: 0 16px 45px 16px;
+}
+
+.border {
+  padding: 16px 8px;
+  margin: 8px 0;
+  border: 1px solid rgba(133, 133, 133, 0.87);
+  border-radius: 5px;
+}
+
+.wrap {
+  width: 452px;
+  flex-wrap: wrap;
+  margin: 20px auto 25px auto;
+}
+
+.checkbox {
+  padding: 4px 8px;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+
+.priceWrapper {
+  margin: auto;
+}
+
+.table {
+  max-width: 650px;  
+}
