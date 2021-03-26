@@ -18,6 +18,42 @@ import {
 } from '@material-ui/pickers';
 import DateFnsUtils from '@date-io/date-fns';
 
+const demoAvailability = [
+  {
+    hour: '12:00',
+    tables: [
+      { id: '1', status: 'null' },
+      { id: '2', status: 'booked' },
+      { id: '3', status: 'event' },
+      { id: '4', status: 'event' },
+      { id: '5', status: 'null' },
+      { id: '6', status: 'null' },
+    ],
+  },
+  {
+    hour: '12:30',
+    tables: [
+      { id: '1', status: 'null' },
+      { id: '2', status: 'null' },
+      { id: '3', status: 'event' },
+      { id: '4', status: 'event' },
+      { id: '5', status: 'null' },
+      { id: '6', status: 'null' },
+    ],
+  },
+  {
+    hour: '13:00',
+    tables: [
+      { id: '1', status: 'booked' },
+      { id: '2', status: 'booked' },
+      { id: '3', status: 'event' },
+      { id: '4', status: 'event' },
+      { id: '5', status: 'null' },
+      { id: '6', status: 'booked' },
+    ],
+  },
+];
+
 const Tables = () => (
   <Paper className={styles.component} elevation={9}>
     <ButtonGroup>
@@ -49,13 +85,46 @@ const Tables = () => (
             'aria-label': 'change date',
           }} */
         />
+        <KeyboardTimePicker
+          margin="normal"
+          id="time-picker"
+          label="Time picker"
+          /* value={selectedDate}
+          onChange={handleDateChange}
+          KeyboardButtonProps={{
+            'aria-label': 'change time',
+          }} */
+        />
       </Grid>
     </MuiPickersUtilsProvider>
-    <div className={styles.component}> 
-      <h2>Table View</h2>
-      <Link to={`${process.env.PUBLIC_URL}/table/bookings/:id`} activeclassname='active'>bookings:id</Link>   
-      <Link to={`${process.env.PUBLIC_URL}/table/events/:id`} activeclassname='active'>event:id</Link>   
-    </div>
+
+    <Table>
+      <TableHead>
+        <TableRow>
+          <TableCell>Hour</TableCell>
+          <TableCell>Table 1</TableCell>
+          <TableCell>Table 2</TableCell>
+          <TableCell>Table 3</TableCell>
+          <TableCell>Table 4</TableCell>
+          <TableCell>Table 5</TableCell>
+          <TableCell>Table 6</TableCell>
+        </TableRow>
+      </TableHead>
+      <TableBody>
+        {demoAvailability.map((row) => (
+          <TableRow key={row.hour}>
+            <TableCell component="th" scope="row">
+              {row.hour}
+            </TableCell>
+            {row.tables.map((table) => (
+              <TableCell key={table.id} component="th" scope="row">
+                {/*  {renderActions(table.status)} */}
+              </TableCell>
+            ))}
+          </TableRow>
+        ))}
+      </TableBody>
+    </Table> 
   </Paper>  
 );
   
@@ -64,3 +133,6 @@ Table.propTypes = {
 };
 
 export default Tables;
+/* 
+<Link to={`${process.env.PUBLIC_URL}/table/bookings/:id`} activeclassname='active'>bookings:id</Link>   
+<Link to={`${process.env.PUBLIC_URL}/table/events/:id`} activeclassname='active'>event:id</Link>  */
