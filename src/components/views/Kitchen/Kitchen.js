@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Kitchen.module.scss';
 import Paper from '@material-ui/core/Paper';
-import { Table, TableCell, Typography, TableRow } from '@material-ui/core';
+import { Table, TableCell, Typography, TableRow, TableBody } from '@material-ui/core';
 import TableHead from '@material-ui/core/TableHead';
 
 const Kitchen = () => {
@@ -13,6 +13,7 @@ const Kitchen = () => {
       orderType: 'pizza',
       options: ['chesse', 'olives, red pepper'],
       amount: 1,
+      status: 'done',
     },
     {
       id: 2,
@@ -21,6 +22,7 @@ const Kitchen = () => {
       orderType: 'coffe',
       options: 'late',
       amount: 2,
+      status: 'in progress',
     },
     {
       id: 3,
@@ -29,6 +31,7 @@ const Kitchen = () => {
       orderType: 'doughnat',
       options: null,
       amount: 4,
+      status: 'delivered',
     },
     {
       id: 4,
@@ -37,6 +40,7 @@ const Kitchen = () => {
       orderType: 'pizza',
       options: ['corn', 'salami', 'green pepper'],
       amount: 3,
+      status: 'in progress',
     },
   ];
 
@@ -60,6 +64,36 @@ const Kitchen = () => {
             <TableCell>Status</TableCell>
           </TableRow>
         </TableHead>
+        <TableBody>
+          {demoOrder.map(row => (
+            <TableRow key={row.table}>
+              <TableCell component="th" scope="row">
+                {row.table}
+              </TableCell>
+              <TableCell component="td">
+                {row.order}
+              </TableCell>
+              <TableCell component="td">
+                {row.orderType}
+              </TableCell>
+              <TableCell component="td">
+                {row.options}
+              </TableCell>
+              <TableCell component="td">
+                {row.amount}
+              </TableCell>
+              <TableCell component="td">
+                {row.status}
+              </TableCell>
+            </TableRow>
+          ))}  
+        </TableBody>
+        <TableBody>
+          {demoOrder.map(row => (
+            <TableRow key={row.order}>
+            </TableRow>
+          ))}
+        </TableBody>
       </Table> 
     </Paper> 
   );
