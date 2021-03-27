@@ -10,6 +10,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import IconButton from '@material-ui/core/IconButton';
 import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
+import Button from '@material-ui/core/Button';
 
 const EventsId = () => {
   
@@ -148,7 +149,25 @@ const EventsId = () => {
                 />
               </ListItem>
             </Grid>
+            <div className={styles.button}>
+              <Button
+                variant='contained'
+                color='primary'
+                size='large'
+              >
+                Save changes
+              </Button>
+            </div>   
           </Grid>
+          <div className={styles.button}>
+            <Button
+              variant='contained'
+              color='primary'
+              size='large'
+            >
+              Save changes
+            </Button>
+          </div>
         </Paper>
       </Grid>
     </Grid>
