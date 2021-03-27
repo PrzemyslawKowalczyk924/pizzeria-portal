@@ -17,7 +17,7 @@ const OrderId = (props) => (
     <Grid item xs={12} className={styles.box}>
       <Paper className={styles.paper} elevation={6}>
         <Typography variant="h5" className={styles.title}>
-          Order Details id:
+          Order Details:
           <Typography variant="h4" component='span' color='secondary' className={styles.orderID}>
             { props.id }
           </Typography>
@@ -65,24 +65,6 @@ const OrderId = (props) => (
                       <Typography variant='body2' component='span'>Toppings: </Typography>
                       <Typography variant='body2' component='span' color='textSecondary'>olives, green pepper, mushromms, basil, salami</Typography>
                     </div>
-                    {/* <ListItem>
-                      <ListItemText
-                        primary={<Typography variant='body1' component='span'>Souce: </Typography>}
-                        secondary={<Typography variant='body2' component='span' color='textSecondary'>tomato</Typography>}
-                      />
-                    </ListItem>
-                    <ListItem>
-                      <ListItemText
-                        primary={<Typography variant='body1' component='span'>Crust: </Typography>}
-                        secondary={<Typography variant='body2' component='span' color='textSecondary'>wholewheat</Typography>}
-                      />
-                    </ListItem>
-                    <ListItem>
-                      <ListItemText
-                        primary={<Typography variant='body1' component='span'>Toppings: </Typography>}
-                        secondary={<Typography variant='body2' component='span' color='textSecondary'>olives, green pepper, mushromms, basil, salami</Typography>}
-                      />
-                    </ListItem> */}
                   </div>
                 }
               />
@@ -97,12 +79,6 @@ const OrderId = (props) => (
                       <Typography variant='body1' component='span'>Ingredients: </Typography>
                       <Typography variant='body2' component='span' color='textSecondary'>cucumber, tomatoes, feta, cheese, herbs, black pepper</Typography>
                     </div>
-                    {/* <ListItem>
-                      <ListItemText
-                        primary={<Typography variant='body1' component='span'>Ingredients: </Typography>}
-                        secondary={<Typography variant='body2' component='span' color='textSecondary'>cucumber, tomatoes, feta, cheese, herbs, black pepper</Typography>}
-                      />
-                    </ListItem> */}
                   </div>
                 }
               />

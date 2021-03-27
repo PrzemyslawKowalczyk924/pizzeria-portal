@@ -1,5 +1,5 @@
 import React from 'react';
-//import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import styles from './EventsId.module.scss';
 import Grid from '@material-ui/core/Grid';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -155,8 +155,8 @@ const EventsId = () => {
   );
 };
   
-/* EventsId.propTypes = {
+EventsId.propTypes = {
   children: PropTypes.node,
-}; */
+};
 
 export default EventsId;

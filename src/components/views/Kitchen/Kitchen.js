@@ -44,10 +44,6 @@ const Kitchen = () => {
     },
   ];
 
-  const handleChange = (event) => {
-    event.target.setAttribute('disabled', true);
-  };
-
   return(
     <Paper className={styles.component}>
       <Typography>

@@ -87,7 +87,9 @@ const renderActions = (status) => {
           {' '}
           Event
         </Button>  
-      );   
+      );
+    default:
+      return null;   
   }
 };
 

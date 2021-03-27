@@ -1,4 +1,4 @@
-import React, {setState} from 'react';
+import React from 'react';
 import styles from './OrderNew.module.scss';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
@@ -42,21 +42,7 @@ const rowSecond = [
   createData('Tomato', '', 'Chesse', '', '45$'),
 ];
 
-const NativeSelects = () => {
-  const [state, setState] = React.useState({
-    age: '',
-    name: 'hai',
-  });
-  const handleChange = (event) => {
-    const name = event.target.name;
-    setState({
-      ...state,
-      [name]: event.target.value,
-    });
-  };
-};
-
-const OrderNew = (handleChange, state) => (
+const OrderNew = () => (
   <div className={styles.root}>
     <Paper className={styles.paper}>
       <Grid container spacing={6}>
@@ -71,12 +57,6 @@ const OrderNew = (handleChange, state) => (
             <InputLabel className={styles.tableNumber} id='choose-table'>Number</InputLabel>
             <NativeSelect
               className={styles.tableNumber}
-              value={state.age}
-              onChange={handleChange}
-              inputProps={{
-                name: 'age',
-                id: 'age-native-helper',
-              }}
             >
               <option aria-label="None" value="" />
               <option value={10}>1</option>
@@ -437,7 +417,6 @@ const OrderNew = (handleChange, state) => (
       </Button>
     </div>    
   </div>
-  
 );
   
 export default OrderNew;
