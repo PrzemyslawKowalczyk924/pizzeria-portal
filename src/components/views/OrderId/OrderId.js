@@ -19,7 +19,7 @@ const OrderId = (props) => (
         <Typography variant="h5" className={styles.title}>
           Order Details id:
           <Typography variant="h4" component='span' color='secondary' className={styles.orderID}>
-            { props.match.params.id}
+            { props.id }
           </Typography>
         </Typography>
         <Grid container >

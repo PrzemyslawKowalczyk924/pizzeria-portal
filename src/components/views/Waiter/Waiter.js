@@ -35,19 +35,19 @@ const renderActions = status => {
       );
     case 'ordered':
       return (
-        <Button>prepared</Button>
+        <Button component={NavLink} to={`${process.env.PUBLIC_URL}/waiter/order/:id`}>prepared</Button>
       );
     case 'prepared':
       return (
-        <Button>delivered</Button>
+        <Button component={NavLink} to={`${process.env.PUBLIC_URL}/waiter/order/:id`}>delivered</Button>
       );
     case 'delivered':
       return (
-        <Button>paid</Button>
+        <Button component={NavLink} to={`${process.env.PUBLIC_URL}/waiter/order/:id`}>paid</Button>
       );
     case 'paid':
       return (
-        <Button>free</Button>
+        <Button component={NavLink} to={`${process.env.PUBLIC_URL}/waiter/order/:id`}>free</Button>
       );
     default:
       return null;
