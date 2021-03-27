@@ -1,18 +1,19 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
+//import PropTypes from 'prop-types';
 import styles from './BookingsId.module.scss';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
-import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
+import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
+import Paper from '@material-ui/core/Paper';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
+import TableRow from '@material-ui/core/TableRow';
+import IconButton from '@material-ui/core/IconButton';
+import EditIcon from '@material-ui/icons/Edit';
+import DeleteIcon from '@material-ui/icons/Delete';
 
 const BookingsId = () => {
-
+  
   const demoContent = {
     date: '2021-02-10',
     hour: '12:00',
@@ -20,65 +21,143 @@ const BookingsId = () => {
     id: '111',
     table: '1',
     people: '5',
-    starter: ['water', 'bread'],
+    starter: ['water',', ', 'bread'],
     phone: '123123123' ,
     email: '123@gmail.com',
+    address: 'New Jearsy 26-600',
+    name: 'Jon Doe',
   };
 
   return (
-    <Paper className={styles.component}> 
-      <Typography className={styles.header} variant="h4">
-        Reservation number {demoContent.id}
-      </Typography>
-      <Table>
-        <TableHead>
-          <TableRow>
-            <TableCell>Date</TableCell>
-            <TableCell>Hour</TableCell>
-            <TableCell>Duration</TableCell>
-            <TableCell>Table</TableCell>
-            <TableCell>People</TableCell>
-            <TableCell>Starter</TableCell>
-            <TableCell>Phone</TableCell>
-            <TableCell>E-mail</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          <TableRow>
-            <TableCell component="th" scope="row">
-              {demoContent.date}
-            </TableCell>
-            <TableCell component="td">
-              {demoContent.hour}
-            </TableCell>
-            <TableCell component="td">
-              {demoContent.duration}
-            </TableCell>
-            <TableCell component="td">
-              {demoContent.table}
-            </TableCell>
-            <TableCell component="td">
-              {demoContent.people}
-            </TableCell>
-            <TableCell component="td">
-              {demoContent.starter}
-            </TableCell>
-            <TableCell component="td">
-              {demoContent.phone}
-            </TableCell>
-            <TableCell component="td">
-              {demoContent.email}
-            </TableCell>
-          </TableRow>
-        </TableBody>
-      </Table>
-      <Link to={`${process.env.PUBLIC_URL}/waiter`} activeclassname='active'>waiter</Link>
-    </Paper>
+    <Grid container component='div' className={styles.component}>
+      <CssBaseline />
+      <Grid item xs={12} className={styles.box}>
+        <Paper className={styles.paper} elevation={6}>
+          <Typography variant="h5" className={styles.title}>Booking Details</Typography>
+          <Grid container>
+            <Grid item xs={12} sm={6} className={styles.boxOrder}>
+              <Typography variant="subtitle1" className={styles.title}>
+                Products list
+                <IconButton edge='end' aria-label='delete'><EditIcon fontSize='small' /></IconButton>
+                <IconButton edge='end' aria-label='delete'><DeleteIcon fontSize='small' /></IconButton>
+              </Typography>
+              <ListItem>
+                <ListItemText
+                  className={styles.list}
+                  primary={
+                    <div>
+                      <Typography variant='body1' component='span'>Date: </Typography>
+                      <Typography variant='body1' component='span' color='secondary'>{demoContent.date}</Typography>
+                    </div>
+                  }
+                />
+                <ListItemText
+                  className={styles.list}
+                  primary={
+                    <div>
+                      <Typography variant='body1' component='span'>People: </Typography>
+                      <Typography variant='body1' component='span' color='secondary'>{demoContent.people}</Typography>
+                    </div>
+                  }
+                />
+              </ListItem>
+              <ListItem>
+                <ListItemText
+                  className={styles.list}
+                  primary={
+                    <div>
+                      <Typography variant='body1' component='span'>Hour: </Typography>
+                      <Typography variant='body1' component='span' color='secondary'>{demoContent.hour}</Typography>
+                    </div>
+                  }
+                />
+                <ListItemText
+                  className={styles.list}
+                  primary={
+                    <div>
+                      <Typography variant='body1' component='span'>Starter: </Typography>
+                      <Typography variant='body1' component='span' color='secondary'>{demoContent.starter}</Typography>
+                    </div>
+                  }
+                />
+              </ListItem>
+              <ListItem>
+                <ListItemText
+                  className={styles.list}
+                  primary={
+                    <div>
+                      <Typography variant='body1' component='span'>Duration: </Typography>
+                      <Typography variant='body1' component='span' color='secondary'>{demoContent.duration}</Typography>
+                    </div>
+                  }
+                />
+                <ListItemText
+                  className={styles.list}
+                  primary={
+                    <div>
+                      <Typography variant='body1' component='span'>Table: </Typography>
+                      <Typography variant='body1' component='span' color='secondary'>{demoContent.table}</Typography>
+                    </div>
+                  }
+                />
+              </ListItem>
+            </Grid>
+            <Grid item xs={12} sm={6} className={styles.boxOrder}>
+              <Typography variant="subtitle1" className={styles.title}>
+                Datasheet
+                <IconButton edge='end' aria-label='delete'><EditIcon fontSize='small' /></IconButton>
+                <IconButton edge='end' aria-label='delete'><DeleteIcon fontSize='small' /></IconButton>
+              </Typography>
+              <ListItem>
+                <ListItemText
+                  className={styles.list}
+                  primary={
+                    <div>
+                      <Typography variant='body1' component='span'>Phone: </Typography>
+                      <Typography variant='body1' component='span' color='secondary'>{demoContent.Phone}</Typography>
+                    </div>
+                  }
+                />
+                <ListItemText
+                  className={styles.list}
+                  primary={
+                    <div>
+                      <Typography variant='body1' component='span'>Address: </Typography>
+                      <Typography variant='body1' component='span' color='secondary'>{demoContent.address}</Typography>
+                    </div>
+                  }
+                />
+              </ListItem>
+              <ListItem>
+                <ListItemText
+                  className={styles.list}
+                  primary={
+                    <div>
+                      <Typography variant='body1' component='span'>E-m@il: </Typography>
+                      <Typography variant='body1' component='span' color='secondary'>{demoContent.email}</Typography>
+                    </div>
+                  }
+                />
+                <ListItemText
+                  className={styles.list}
+                  primary={
+                    <div>
+                      <Typography variant='body1' component='span'>Name: </Typography>
+                      <Typography variant='body1' component='span' color='secondary'>{demoContent.name}</Typography>
+                    </div>
+                  }
+                />
+              </ListItem>
+            </Grid>
+          </Grid>
+        </Paper>
+      </Grid>
+    </Grid>
   );
 };
   
-BookingsId.propTypes = {
+/* BookingsId.propTypes = {
   children: PropTypes.node,
-};
+}; */
 
 export default BookingsId;

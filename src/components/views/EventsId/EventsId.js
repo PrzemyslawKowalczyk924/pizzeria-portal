@@ -7,7 +7,9 @@ import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
-import TableRow from '@material-ui/core/TableRow';
+import IconButton from '@material-ui/core/IconButton';
+import EditIcon from '@material-ui/icons/Edit';
+import DeleteIcon from '@material-ui/icons/Delete';
 
 const EventsId = () => {
   
@@ -28,7 +30,6 @@ const EventsId = () => {
   return (
     <Grid container component='div' className={styles.component}>
       <CssBaseline />
-      <Typography>EventsId View</Typography>
       <Grid item xs={12} className={styles.box}>
         <Paper className={styles.paper} elevation={6}>
           <Typography variant="h5" className={styles.title}>Event Details</Typography>
@@ -36,6 +37,8 @@ const EventsId = () => {
             <Grid item xs={12} sm={6} className={styles.boxOrder}>
               <Typography variant="subtitle1" className={styles.title}>
                 Products list
+                <IconButton edge='end' aria-label='delete'><EditIcon fontSize='small' /></IconButton>
+                <IconButton edge='end' aria-label='delete'><DeleteIcon fontSize='small' /></IconButton>
               </Typography>
               <ListItem>
                 <ListItemText
@@ -101,6 +104,8 @@ const EventsId = () => {
             <Grid item xs={12} sm={6} className={styles.boxOrder}>
               <Typography variant="subtitle1" className={styles.title}>
                 Datasheet
+                <IconButton edge='end' aria-label='delete'><EditIcon fontSize='small' /></IconButton>
+                <IconButton edge='end' aria-label='delete'><DeleteIcon fontSize='small' /></IconButton>
               </Typography>
               <ListItem>
                 <ListItemText

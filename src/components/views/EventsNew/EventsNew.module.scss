@@ -1,5 +1,22 @@
 @import '../../../styles/settings.scss';
+@import '../../../styles/views.scss';
 
 .component {
   padding: $base-size;
+}
+
+.orderID {
+  padding-left: 8px;
+}
+
+.boxOrder {
+  padding: 0 24px;
+  border: 1px solid rgba(133, 133, 133, 0.87);
+  border-radius: 5px;
+}
+
+.list {
+  max-width: 250px;
+  padding-left: 32px;
+  text-align: left;
 }
