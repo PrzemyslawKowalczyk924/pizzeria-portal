@@ -17,6 +17,8 @@ import {
   KeyboardDatePicker,
 } from '@material-ui/pickers';
 import DateFnsUtils from '@date-io/date-fns';
+import { Avatar } from '@material-ui/core';
+import AddIcon from '@material-ui/icons/Add';
 
 const demoAvailability = [
   {
@@ -53,6 +55,41 @@ const demoAvailability = [
     ],
   },
 ];
+
+const renderActions = (status) => {
+  switch(status) {
+    case 'null':
+      return (
+        <Button
+          component={Link}
+          to={`${process.env.PUBLIC_URL}/table/bookings/new`}
+        >
+          {' '}
+          <Avatar><AddIcon/></Avatar>
+        </Button>
+      );
+    case 'booked':
+      return (
+        <Button
+          component={Link}
+          to={`${process.env.PUBLIC_URL}/table/bookings/:id`}
+        >
+          {' '}
+          Booked
+        </Button>
+      ); 
+    case 'event':
+      return (
+        <Button
+          component={Link}
+          to={`${process.env.PUBLIC_URL}/table/events/:id`}
+        >
+          {' '}
+          Event
+        </Button>  
+      );   
+  }
+};
 
 const Tables = () => (
   <Paper className={styles.component} elevation={9}>
@@ -118,7 +155,7 @@ const Tables = () => (
             </TableCell>
             {row.tables.map((table) => (
               <TableCell key={table.id} component="th" scope="row">
-                {/*  {renderActions(table.status)} */}
+                {renderActions(table.status)}
               </TableCell>
             ))}
           </TableRow>
@@ -133,6 +170,3 @@ Table.propTypes = {
 };
 
 export default Tables;
-/* 
-<Link to={`${process.env.PUBLIC_URL}/table/bookings/:id`} activeclassname='active'>bookings:id</Link>   
-<Link to={`${process.env.PUBLIC_URL}/table/events/:id`} activeclassname='active'>event:id</Link>  */
