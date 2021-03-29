@@ -36,12 +36,14 @@ export const fetchFromAPI = () => {
       });
   };
 };
-export const fetchFromAPIUpdate = (tableId, status) => {
+export const fetchFromAPIUpdate = (tableId, newStatus) => {
   return (dispatch, getState) => {
+    dispatch(fetchStarted());
+
     Axios
-      .put(`${api.url}/api/${api.tables}/${tableId}`, {status})
+      .put(`${api.url}/api/${api.tables}/${tableId}`, {status: newStatus})
       .then(res => {
-        dispatch(fetchTableUpdate(res.data.id, res.data.status));
+        dispatch(fetchTableUpdate(res.data));
       })
       .catch(err => {
         dispatch(fetchError(err.message || true));
@@ -83,6 +85,10 @@ export default function reducer(statePart = [], action = {}) {
     case FETCH_TABLE_UPDATE: {
       return {
         ...statePart,
+        loading: {
+          active: false,
+          error: false,
+        },
         data: statePart.data.map((el) =>
           el.id === action.payload.id
             ? {...el, status: action.payload.status}
